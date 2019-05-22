@@ -78,7 +78,7 @@ final class NetworkManager {
         let realServiceHandler = RealServiceHandler(dispatcher: .urlSession)
         let mockServiceHandler = MockServiceHandler.init()
         
-        return isMockMode ? realServiceHandler : mockServiceHandler
+        return isMockMode ? mockServiceHandler : realServiceHandler
     }
 }
 

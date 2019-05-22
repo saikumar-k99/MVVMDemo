@@ -8,7 +8,7 @@
 
 import Foundation
 
-let baseURL = "https://api.myjson.com/bins/qqp5k"
+let baseURL = "https://api.myjson.com/"
 
 enum API: String {
     case hospitalApi
