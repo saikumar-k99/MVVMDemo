@@ -8,12 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		A60486E822944CD3004248EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60486E722944CD3004248EE /* AppDelegate.swift */; };
-		A60486EA22944CD3004248EE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60486E922944CD3004248EE /* ViewController.swift */; };
+		A60486EA22944CD3004248EE /* HospitalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60486E922944CD3004248EE /* HospitalViewController.swift */; };
 		A60486ED22944CD3004248EE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A60486EB22944CD3004248EE /* Main.storyboard */; };
 		A60486EF22944CD4004248EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A60486EE22944CD4004248EE /* Assets.xcassets */; };
 		A60486F222944CD4004248EE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A60486F022944CD4004248EE /* LaunchScreen.storyboard */; };
 		A60486FD22944CD4004248EE /* MVVMDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60486FC22944CD4004248EE /* MVVMDemoTests.swift */; };
 		A604870822944CD4004248EE /* MVVMDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A604870722944CD4004248EE /* MVVMDemoUITests.swift */; };
+		A614017D229459BE00EDA8F5 /* HospitalCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A614017B229459BE00EDA8F5 /* HospitalCellTableViewCell.swift */; };
+		A614017E229459BE00EDA8F5 /* HospitalCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A614017C229459BE00EDA8F5 /* HospitalCellTableViewCell.xib */; };
+		A6140180229464F900EDA8F5 /* HospitalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A614017F229464F900EDA8F5 /* HospitalViewModel.swift */; };
+		A614018322947D2A00EDA8F5 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A614018222947D2A00EDA8F5 /* Extensions.swift */; };
+		A61401852294810C00EDA8F5 /* HospitalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61401842294810C00EDA8F5 /* HospitalModel.swift */; };
+		A6140187229487CE00EDA8F5 /* HospitalWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6140186229487CE00EDA8F5 /* HospitalWorker.swift */; };
+		A614018A2294894400EDA8F5 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61401892294894400EDA8F5 /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +43,7 @@
 /* Begin PBXFileReference section */
 		A60486E422944CD3004248EE /* MVVMDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MVVMDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A60486E722944CD3004248EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A60486E922944CD3004248EE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A60486E922944CD3004248EE /* HospitalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HospitalViewController.swift; sourceTree = "<group>"; };
 		A60486EC22944CD3004248EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A60486EE22944CD4004248EE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A60486F122944CD4004248EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +54,13 @@
 		A604870322944CD4004248EE /* MVVMDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MVVMDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A604870722944CD4004248EE /* MVVMDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMDemoUITests.swift; sourceTree = "<group>"; };
 		A604870922944CD4004248EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A614017B229459BE00EDA8F5 /* HospitalCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HospitalCellTableViewCell.swift; sourceTree = "<group>"; };
+		A614017C229459BE00EDA8F5 /* HospitalCellTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HospitalCellTableViewCell.xib; sourceTree = "<group>"; };
+		A614017F229464F900EDA8F5 /* HospitalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HospitalViewModel.swift; sourceTree = "<group>"; };
+		A614018222947D2A00EDA8F5 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		A61401842294810C00EDA8F5 /* HospitalModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HospitalModel.swift; sourceTree = "<group>"; };
+		A6140186229487CE00EDA8F5 /* HospitalWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HospitalWorker.swift; sourceTree = "<group>"; };
+		A61401892294894400EDA8F5 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,9 +111,10 @@
 		A60486E622944CD3004248EE /* MVVMDemo */ = {
 			isa = PBXGroup;
 			children = (
+				A614017A229458A800EDA8F5 /* HospitalScene */,
+				A61401882294890B00EDA8F5 /* Networking */,
+				A614018122947D0400EDA8F5 /* Extensions */,
 				A60486E722944CD3004248EE /* AppDelegate.swift */,
-				A60486E922944CD3004248EE /* ViewController.swift */,
-				A60486EB22944CD3004248EE /* Main.storyboard */,
 				A60486EE22944CD4004248EE /* Assets.xcassets */,
 				A60486F022944CD4004248EE /* LaunchScreen.storyboard */,
 				A60486F322944CD4004248EE /* Info.plist */,
@@ -123,6 +138,36 @@
 				A604870922944CD4004248EE /* Info.plist */,
 			);
 			path = MVVMDemoUITests;
+			sourceTree = "<group>";
+		};
+		A614017A229458A800EDA8F5 /* HospitalScene */ = {
+			isa = PBXGroup;
+			children = (
+				A60486EB22944CD3004248EE /* Main.storyboard */,
+				A61401842294810C00EDA8F5 /* HospitalModel.swift */,
+				A60486E922944CD3004248EE /* HospitalViewController.swift */,
+				A614017F229464F900EDA8F5 /* HospitalViewModel.swift */,
+				A6140186229487CE00EDA8F5 /* HospitalWorker.swift */,
+				A614017B229459BE00EDA8F5 /* HospitalCellTableViewCell.swift */,
+				A614017C229459BE00EDA8F5 /* HospitalCellTableViewCell.xib */,
+			);
+			path = HospitalScene;
+			sourceTree = "<group>";
+		};
+		A614018122947D0400EDA8F5 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A614018222947D2A00EDA8F5 /* Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		A61401882294890B00EDA8F5 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				A61401892294894400EDA8F5 /* NetworkManager.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -230,6 +275,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A60486F222944CD4004248EE /* LaunchScreen.storyboard in Resources */,
+				A614017E229459BE00EDA8F5 /* HospitalCellTableViewCell.xib in Resources */,
 				A60486EF22944CD4004248EE /* Assets.xcassets in Resources */,
 				A60486ED22944CD3004248EE /* Main.storyboard in Resources */,
 			);
@@ -256,8 +302,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A60486EA22944CD3004248EE /* ViewController.swift in Sources */,
+				A614018322947D2A00EDA8F5 /* Extensions.swift in Sources */,
+				A60486EA22944CD3004248EE /* HospitalViewController.swift in Sources */,
+				A614017D229459BE00EDA8F5 /* HospitalCellTableViewCell.swift in Sources */,
+				A6140187229487CE00EDA8F5 /* HospitalWorker.swift in Sources */,
+				A614018A2294894400EDA8F5 /* NetworkManager.swift in Sources */,
+				A6140180229464F900EDA8F5 /* HospitalViewModel.swift in Sources */,
 				A60486E822944CD3004248EE /* AppDelegate.swift in Sources */,
+				A61401852294810C00EDA8F5 /* HospitalModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,15 +484,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = KVSQV4727C;
+				DEVELOPMENT_TEAM = YE89MA28Y3;
 				INFOPLIST_FILE = MVVMDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.iOSBytes.MVVMDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.iOSBytes.MVVMDemo678987678;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -450,15 +504,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = KVSQV4727C;
+				DEVELOPMENT_TEAM = YE89MA28Y3;
 				INFOPLIST_FILE = MVVMDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.iOSBytes.MVVMDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.iOSBytes.MVVMDemo678987678;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
