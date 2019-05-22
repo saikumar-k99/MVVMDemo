@@ -9,10 +9,12 @@
 import Foundation
 
 protocol SharedNetworkingInterface {
-    typealias successCallback = (_ responseJson: Any?) -> Void
-    typealias failureCallback = (_ error: Error?) -> Void
+    typealias successCallback = (_ responseJson: Data) -> Void
+    typealias failureCallback = (_ error: Error) -> Void
     //List of all the network API calls go here
-    func getHospitalDataFromAPI(request: RequestObj, successCallBack: successCallback, errorCallback: failureCallback)
+    func getHospitalDataFromAPI(request: RequestObj,
+                                successCallBack: @escaping successCallback,
+                                errorCallback: @escaping failureCallback)
 }
 
 enum Dispatcher {
@@ -81,6 +83,7 @@ final class NetworkManager {
 }
 
 struct RealServiceHandler: SharedNetworkingInterface {
+    
     var dispatcher: Dispatcher?
     
     init(dispatcher: Dispatcher) {
@@ -88,15 +91,15 @@ struct RealServiceHandler: SharedNetworkingInterface {
     }
     
     func getHospitalDataFromAPI(request: RequestObj,
-                                successCallBack: SharedNetworkingInterface.successCallback,
-                                errorCallback: SharedNetworkingInterface.failureCallback) {
+                                successCallBack: @escaping SharedNetworkingInterface.successCallback,
+                                errorCallback: @escaping SharedNetworkingInterface.failureCallback) {
         
-        dispatcher?.makeAPICall(request: request, onSuccess: successCallback, onError: failureCallback)
+        dispatcher?.makeAPICall(request: request, onSuccess: successCallBack, onError: errorCallback)
     }
 }
 
 struct MockServiceHandler: SharedNetworkingInterface {
-    func getHospitalDataFromAPI(request: RequestObj, successCallBack: (Any?) -> Void, errorCallback: (Error?) -> Void) {
-        
+    func getHospitalDataFromAPI(request: RequestObj, successCallBack: (Data) -> Void, errorCallback: (Error) -> Void) {
+        // mock implementation here
     }
 }
