@@ -19,10 +19,16 @@ class HospitalViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         hospitalTableView.register(HospitalCellTableViewCell.getNib(), forCellReuseIdentifier: HospitalCellTableViewCell.identifier)
-        viewModel?.getHospitalData()
+        viewModel?.getHospitalData(callback: { (response, error) in
+            guard let _ = error else {
+                DispatchQueue.main.async {
+                    self.hospitalTableView.reloadData()
+                }
+                return
+            }
+        })
+        
     }
-
-
 }
 
 extension HospitalViewController: UITableViewDataSource, UITableViewDelegate {

@@ -9,13 +9,20 @@
 import Foundation
 
 struct HospitalViewModel {
-    var responseModel: ResponseModel?
+    var responseModel: HospitalResponseModel?
     
     lazy var worker = {
         return HospitalWorker()
     }
     
-    func getHospitalData() {
-        worker.
+    mutating func getHospitalData(callback: (HospitalResponseModel?, Error?) -> Void) {
+        worker().getHospitalDataFromAPI { (hospitalResponseModel, error) in
+            if let response = hospitalResponseModel {
+                responseModel = response
+                callback(responseModel, nil)
+            } else if let errorObj = error {
+                callback(nil, errorObj)
+            }
+        }
     }
 }

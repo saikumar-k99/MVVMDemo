@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct ResponseModel: Codable {
+struct HospitalResponseModel: Codable {
     var medications: [MedicationDict]?
     var labs: [Lab]?
     var imagingList: [Imaging]?
