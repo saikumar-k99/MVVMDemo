@@ -34,9 +34,9 @@ enum RequestData {
     var payload: RequestObj {
         switch self {
         case .hospitalApi(let endpoint):
-            return RequestObj.createRequestObj(endPoint: endpoint, httpMethod: .GET, headerParams: nil, bodyParams: nil)
+            return RequestObj(endPoint: endpoint, httpMethod: .GET, headerParams: nil, bodyParams: nil)
         case .labApi(let endpoint):
-            return RequestObj.createRequestObj(endPoint: endpoint, httpMethod: .GET, headerParams: nil, bodyParams: nil)
+            return RequestObj(endPoint: endpoint, httpMethod: .GET, headerParams: nil, bodyParams: nil)
         }
     }
 }
@@ -46,19 +46,6 @@ struct RequestObj {
     var httpMethod: httpMethod = .GET
     var headerParams: [String: String]?
     var bodyParams: [String: Any]?
-    
-    private init() { }
-    
-    init(endPoint: String) {
-        self.endPoint = endPoint
-    }
-    
-    static func createRequestObj(endPoint: String,
-                                 httpMethod: httpMethod,
-                                 headerParams: [String: String]?,
-                                 bodyParams: [String: Any]?) -> RequestObj {
-        
-    }
 }
 
 enum httpMethod: String {
@@ -76,18 +63,15 @@ protocol RequestResponseInterface {
 }
 
 extension RequestResponseInterface {
-    func parseData(data: Data) -> ResponseType? {
+    func parseData(data: Data) -> Any {
         do {
             let jsonDecoder = JSONDecoder()
             let result = try jsonDecoder.decode(ResponseType.self, from: data)
             
-            DispatchQueue.main.async {
-                return result
-            }
+            return result
+            
         } catch let error {
-            DispatchQueue.main.async {
-                return error
-            }
+            return error
         }
     }
 }

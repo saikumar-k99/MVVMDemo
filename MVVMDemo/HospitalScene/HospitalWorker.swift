@@ -19,11 +19,17 @@ struct HospitalRequestResponse: RequestResponseInterface {
 
 struct HospitalWorker {
     
-    func getHospitalDataFromAPI(callBack: (_ response: HospitalResponseModel?, _ error: Error?) -> Void ) {
+    func getHospitalDataFromAPI(callBack: @escaping (_ response: HospitalResponseModel?, _ error: Error?) -> Void ) {
         let requestResponseModel = HospitalRequestResponse()
         NetworkManager.shared().getHospitalDataFromAPI(request: requestResponseModel.requestInfo, successCallBack: { (responseData) in
-            let responseModel = requestResponseModel.parseData(data: responseData as! Data)
-            callBack(responseModel, nil)
+            
+            let responseModel = requestResponseModel.parseData(data: responseData )
+            
+            if let successModel = responseModel as? HospitalResponseModel {
+                callBack(successModel, nil)
+            } else if let error = responseModel as? Error {
+                callBack(nil, error)
+            }
         }, errorCallback: { (error) in
             callBack(nil, error)
         })
