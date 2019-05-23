@@ -9,7 +9,7 @@
 import Foundation
 
 class HospitalViewModel {
-    var responseModel: HospitalResponseModel?
+    var responseModel: HospitalResponseModel? 
     
     lazy var worker = {
         return HospitalWorker()

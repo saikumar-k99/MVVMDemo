@@ -8,7 +8,7 @@
 
 import Foundation
 
-let baseURL = "https://api.myjson.com/"
+let baseURL = "https://urldefense.proofpoint.com/"
 
 enum API: String {
     case hospitalApi
@@ -18,11 +18,11 @@ enum API: String {
     var endPoint: String {
         switch self {
         case .hospitalApi:
-            return baseURL + "bins/qqp5k"
+            return baseURL + "v2/url?u=https-3A__api.myjson.com_bins_qqp5k&d=DwMGaQ&c=1hIq-C3ayh4zm6RZ7m4R2A&r=brzxXVtmD5gSKmzJNvdb7qKGVUO9hUIyZeIHzlAovfvnssQ1Lp2FRR95uHd6pT6M&m=cIMa-MhAZBkDM5Ir7TDmOW5MG0D6JIG8m5Y0HbYb2UQ&s=yb_Gb7XIb83myP4nnWD-2cpdaNhOQJDC-YrXzLe8E08&e="
         case .labApi:
-            return baseURL + "bins/qqp5k"
+            return baseURL + "v2/url?u=https-3A__api.myjson.com_bins_qqp5k&d=DwMGaQ&c=1hIq-C3ayh4zm6RZ7m4R2A&r=brzxXVtmD5gSKmzJNvdb7qKGVUO9hUIyZeIHzlAovfvnssQ1Lp2FRR95uHd6pT6M&m=cIMa-MhAZBkDM5Ir7TDmOW5MG0D6JIG8m5Y0HbYb2UQ&s=yb_Gb7XIb83myP4nnWD-2cpdaNhOQJDC-YrXzLe8E08&e="
         case .loginApi:
-            return baseURL + "bins/qqp5k"
+            return baseURL + "v2/url?u=https-3A__api.myjson.com_bins_qqp5k&d=DwMGaQ&c=1hIq-C3ayh4zm6RZ7m4R2A&r=brzxXVtmD5gSKmzJNvdb7qKGVUO9hUIyZeIHzlAovfvnssQ1Lp2FRR95uHd6pT6M&m=cIMa-MhAZBkDM5Ir7TDmOW5MG0D6JIG8m5Y0HbYb2UQ&s=yb_Gb7XIb83myP4nnWD-2cpdaNhOQJDC-YrXzLe8E08&e="
         }
     }
 }

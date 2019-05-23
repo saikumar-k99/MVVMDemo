@@ -12,10 +12,16 @@ struct HospitalResponseModel: Codable {
     var medications: [MedicationDict]?
     var labs: [Lab]?
     var imagingList: [Imaging]?
+    
+    private enum CodingKeys: String, CodingKey {
+        case medications
+        case labs
+        case imagingList = "imaging"
+    }
 }
 
 struct MedicationDict: Codable {
-    var medicationDict: [String: [Medication]]?
+    let aceInhibitors, antianginal, anticoagulants, betaBlocker, diuretic, mineral : [Medication]?
 }
 
 struct Medication: Codable {
