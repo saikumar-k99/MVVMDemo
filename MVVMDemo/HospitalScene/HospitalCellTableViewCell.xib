@@ -32,7 +32,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="gyuhijok;jhbnkjhiol,mnjklmnbjklkjhhjklkjhjklkjhbjkl;lkjfdsfsahbjkl" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RXu-0T-5Rq">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="gyuhijok;jhbnkjhiol,mnjklmnbjklkjhhjklkjhjklkjhbjkl;lkjfdsfsahbjkl" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RXu-0T-5Rq" userLabel="LabelTwo">
                                         <rect key="frame" x="0.0" y="56" width="319" height="24"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -72,6 +72,7 @@
                         </subviews>
                     </stackView>
                 </subviews>
+                <color key="backgroundColor" red="0.9548833452355423" green="1" blue="0.65263521429141114" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="Ets-oQ-yuH" secondAttribute="trailing" id="6uR-Sx-L30"/>
                     <constraint firstAttribute="bottom" secondItem="Ets-oQ-yuH" secondAttribute="bottom" id="QuH-wl-s7y"/>
@@ -80,6 +81,14 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="labelFive" destination="rek-4j-ID9" id="T69-dE-eeu"/>
+                <outlet property="labelFour" destination="OGo-UJ-nep" id="bxb-Yz-0gT"/>
+                <outlet property="labelOne" destination="n0U-yI-JRH" id="Ask-E3-NyD"/>
+                <outlet property="labelSix" destination="dGg-0H-P7m" id="qxU-Q4-mKv"/>
+                <outlet property="labelThree" destination="VG9-ot-6E9" id="cUY-4h-Uzb"/>
+                <outlet property="labelTwo" destination="RXu-0T-5Rq" id="vdb-XH-Yw5"/>
+            </connections>
             <point key="canvasLocation" x="52.799999999999997" y="40.929535232383813"/>
         </tableViewCell>
     </objects>

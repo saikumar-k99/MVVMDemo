@@ -24,14 +24,14 @@ struct HospitalWorker {
         NetworkManager.shared().getHospitalDataFromAPI(request: requestResponseModel.requestInfo, successCallBack: { (responseData) in
             
             let responseModel = requestResponseModel.parseData(data: responseData )
-            
-            if let successModel = responseModel as? HospitalResponseModel {
-                callBack(successModel, nil)
-            } else if let error = responseModel as? Error {
-                callBack(nil, error)
-            }
+           
+                if let successModel = responseModel as? HospitalResponseModel {
+                    callBack(successModel, nil)
+                } else if let error = responseModel as? Error {
+                    callBack(nil, error)
+                }
         }, errorCallback: { (error) in
-            callBack(nil, error)
+                callBack(nil, error)
         })
     }
 }

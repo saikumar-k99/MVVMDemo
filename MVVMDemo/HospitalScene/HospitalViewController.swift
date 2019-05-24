@@ -18,7 +18,8 @@ class HospitalViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        hospitalTableView.register(HospitalCellTableViewCell.getNib(), forCellReuseIdentifier: HospitalCellTableViewCell.identifier)
+        hospitalTableView.register(UINib(nibName: "HospitalCellTableViewCell", bundle: nil), forCellReuseIdentifier: "HospitalCellTableViewCell")
+        
         viewModel?.getHospitalData(callback: { (response, error) in
             guard let _ = error else {
                 DispatchQueue.main.async {
@@ -32,11 +33,27 @@ class HospitalViewController: UIViewController {
 }
 
 extension HospitalViewController: UITableViewDataSource, UITableViewDelegate {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        guard let dataSource = viewModel else {
+            return 0
+        }
+        
+        return dataSource.getNumberOfSections()
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return viewModel?.getNumberOfRowsFor(section: section) ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "HospitalCellTableViewCell", for: indexPath) as? HospitalCellTableViewCell else {
+            return UITableViewCell()
+        }
+        
+        cell.loadContents(model: viewModel?.getCellForRow(index: indexPath) ?? CellDisplayModel(label1: "Dummy", label2: "Dummy", label3: "Dummy", label4: "Dummy", label5: "Dummy", label6: "Dummy"))
+        
+        return cell
     }
 }

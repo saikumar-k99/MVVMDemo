@@ -13,10 +13,20 @@ struct HospitalResponseModel: Codable {
     var labs: [Lab]?
     var imagingList: [Imaging]?
     
-    private enum CodingKeys: String, CodingKey {
+    private enum CodingKeys: String, CodingKey, CaseIterable {
         case medications
         case labs
         case imagingList = "imaging"
+    }
+}
+
+extension HospitalResponseModel {
+    func getNumberOfCases() -> Int {
+        return CodingKeys.allCases.count
+    }
+    
+    func getMedicationsList() -> [Medication]? {
+        return [Medication(), Medication()]
     }
 }
 
