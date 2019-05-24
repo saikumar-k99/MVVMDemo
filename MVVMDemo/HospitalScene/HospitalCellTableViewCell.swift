@@ -15,6 +15,10 @@ struct CellDisplayModel {
     let label4: String?
     let label5: String?
     let label6: String?
+    
+    static func placeholder() -> CellDisplayModel {
+        return CellDisplayModel(label1: "Dummy", label2: "Dummy", label3: "Dummy", label4: "Dummy", label5: "Dummy", label6: "Dummy")
+    }
 }
 
 class HospitalCellTableViewCell: UITableViewCell {

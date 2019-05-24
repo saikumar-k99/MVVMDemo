@@ -28,14 +28,14 @@ enum HospitalDataSource: Int {
         switch indexPath.section {
         case HospitalDataSource.lab.rawValue:
             guard let labCellModel =  model.labs?[indexPath.row] else {
-                return CellDisplayModel(label1: "Dummy", label2: "Dummy", label3: "Dummy", label4: "Dummy", label5: "Dummy", label6: "Dummy")
+                return CellDisplayModel.placeholder()
             }
             
             return CellDisplayModel(label1: labCellModel.name, label2: labCellModel.time, label3: labCellModel.location, label4: nil, label5: nil, label6: nil)
        
         case HospitalDataSource.medicals.rawValue:
             guard let medicalCellModel =  model.getMedicationsList()?[indexPath.row] else {
-                return CellDisplayModel(label1: "Dummy", label2: "Dummy", label3: "Dummy", label4: "Dummy", label5: "Dummy", label6: "Dummy")
+                return CellDisplayModel.placeholder()
             }
             
             
@@ -43,13 +43,13 @@ enum HospitalDataSource: Int {
             
         case HospitalDataSource.imaging.rawValue:
             guard let imagingCellModel =  model.imagingList?[indexPath.row] else {
-                return CellDisplayModel(label1: "Dummy", label2: "Dummy", label3: "Dummy", label4: "Dummy", label5: "Dummy", label6: "Dummy")
+                return CellDisplayModel.placeholder()
             }
             
             return CellDisplayModel(label1: imagingCellModel.name, label2: imagingCellModel.time, label3: imagingCellModel.location, label4: nil, label5: nil, label6: nil)
             
         default:
-            return CellDisplayModel(label1: "Dummy", label2: "Dummy", label3: "Dummy", label4: "Dummy", label5: "Dummy", label6: "Dummy")
+            return CellDisplayModel.placeholder()
         }
     }
 }
@@ -93,12 +93,12 @@ extension HospitalViewModel {
     
     func getCellForRow(index:IndexPath) -> CellDisplayModel {
         guard let model = responseModel else {
-            return CellDisplayModel(label1: "Dummy", label2: "Dummy", label3: "Dummy", label4: "Dummy", label5: "Dummy", label6: "Dummy")
+            return CellDisplayModel.placeholder()
         }
         
         let dataSource = HospitalDataSource(rawValue: index.section)
         
-        return dataSource?.getCellDataFor(indexPath: index, model: model) ?? CellDisplayModel(label1: "Dummy", label2: "Dummy", label3: "Dummy", label4: "Dummy", label5: "Dummy", label6: "Dummy")
+        return dataSource?.getCellDataFor(indexPath: index, model: model) ?? CellDisplayModel.placeholder()
     }
 }
 

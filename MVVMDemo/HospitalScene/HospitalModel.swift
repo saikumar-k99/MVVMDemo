@@ -26,6 +26,7 @@ extension HospitalResponseModel {
     }
     
     func getMedicationsList() -> [Medication]? {
+        //TODO:- extract the array objects here
         return [Medication(), Medication()]
     }
 }

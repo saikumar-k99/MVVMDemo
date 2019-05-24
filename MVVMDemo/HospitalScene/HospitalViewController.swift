@@ -28,7 +28,6 @@ class HospitalViewController: UIViewController {
                 return
             }
         })
-        
     }
 }
 
@@ -52,7 +51,7 @@ extension HospitalViewController: UITableViewDataSource, UITableViewDelegate {
             return UITableViewCell()
         }
         
-        cell.loadContents(model: viewModel?.getCellForRow(index: indexPath) ?? CellDisplayModel(label1: "Dummy", label2: "Dummy", label3: "Dummy", label4: "Dummy", label5: "Dummy", label6: "Dummy"))
+        cell.loadContents(model: viewModel?.getCellForRow(index: indexPath) ?? CellDisplayModel.placeholder())
         
         return cell
     }
